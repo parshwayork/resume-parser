@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+output/
+*.log
+# macOS/editor noise
+.DS_Store
+
+# env variants (keep example)
+.env.*
+!.env.example
+
+# test/build misc
+coverage/
+.vitest/
+pnpm-debug.log*
+
+# optional: ignore local sample inputs if they contain real PII
+# inputs/

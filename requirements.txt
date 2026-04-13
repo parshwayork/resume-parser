@@ -1,0 +1,97 @@
+1
+
+2
+
+3
+
+4
+
+Technical Assessment | Engineering Manager — Internal Selection | Confidential
+Internal & Confidential Page
+Technical Assessment
+Engineering Manager — Internal Selection
+Duration: 2–3 Hours | Format: Local Machine | Round: First Round
+Scenario: Talent Intelligence & Ranking Engine
+You have been asked to rebuild a legacy recruitment system for a hiring platform operating at
+scale. The current keyword-matching approach produces low-quality candidate-to-role matches.
+The business needs a smarter, AI-native replacement.
+Context & Scale
+Dimension Details
+Active Candidates 50,000 profiles in the system
+Live Job Openings 1,500 roles open at any time
+Current Problem Keyword matching — produces poor-quality candidate-to-role matches
+Goal A ranked Top 10 Candidates list per job role
+Time Limit 2–3 hours
+What You Need to Build
+Design and implement a service that:
+• Parses resumes and job descriptions from multiple file formats
+• Builds a pipeline from document ingestion through to a ranked candidate output
+• Returns the Top 10 best-matched candidates for a given job role
+• Is designed with concurrency and scale in mind, even if not fully implemented in the
+POC
+Technical Assessment | Engineering Manager — Internal Selection | Confidential
+Internal & Confidential Page
+Scope & Environment
+This is a proof-of-concept, not a production deployment. Build and run everything on your local
+machine.
+Local equivalents are expected:
+• Local file storage instead of S3
+• In-memory or local queuing instead of SQS or equivalent
+• Lightweight local DB or flat file instead of a managed database
+If your design would use a managed cloud service in production, document it as a scaling
+consideration in DESIGN.md. That is the right way to handle it — and it is part of what we are
+evaluating.
+An OpenAI API key will be provided to all candidates. Use it for any LLM-dependent
+functionality in your solution. Do not use your own key.
+Sample inputs will be provided with this assessment: 8–10 resumes in mixed formats (PDF,
+DOCX) and one job description. Your POC must produce a ranked output against these inputs.
+Technical Constraints
+Your solution must address all three of the following:
+1. File Format Handling
+Ingestion must support at minimum PDF and DOCX formats. Your parsing approach should be
+extensible to additional formats without a full rewrite.
+2. Data Pipeline
+Define and implement the full flow: raw document intake → parsing → scoring → ranked output.
+The pipeline does not need to be production-grade, but the design must be. Use DESIGN.md to
+document what a production version would look like.
+3. Cold Start Accuracy
+Explain how your system handles a brand-new job posting with no historical data or prior match
+signals. Your approach must be reasoned and defensible — not deferred to future work.
+Technical Assessment | Engineering Manager — Internal Selection | Confidential
+Internal & Confidential Page
+Deliverables
+Deliverable Description
+Code Repository A working thin-slice POC covering the core pipeline logic. Must run locally
+against the provided sample inputs.
+DESIGN.md Architecture document covering: system design, data flow, how you would
+scale to production (e.g. S3, queuing, distributed workers), and known
+failure modes.
+AI Interaction Log Export your full prompt/chat history from whichever AI tool you used during
+the build. This is mandatory — not optional.
+AI Interaction Log — Mandatory
+A key part of this assessment is understanding how you collaborate with AI tools. You will walk
+through your prompt logic on the follow-up review call.
+• Cursor / Windsurf: Export the chat history panel using the Export Transcript option
+• ChatGPT: Use the share/export feature to download your conversation
+• Any other tool: Export or copy your full prompt history in any readable format
+Submissions without an AI interaction log will be considered incomplete.
+Tools & Environment
+You are expected to use an AI-native development environment. Recommended options:
+• Cursor
+• Windsurf
+• VS Code with GitHub Copilot or Aider
+• ChatGPT (export your full conversation on submission)
+Technical Assessment | Engineering Manager — Internal Selection | Confidential
+Internal & Confidential Page
+There is no restriction on language or framework. Use what you are most effective with.
+Submission
+Upload all deliverables to a public GitHub repository created from your company email account.
+Share the repository link as your submission.
+The repository must be created using your company email address and set to public.
+Submissions from personal accounts or private repositories will not be reviewed.
+Checklist:
+☐ Public GitHub repository created from company email
+☐ Code — working POC committed to the repository
+☐ DESIGN.md — architecture, scaling approach, and known failure modes
+☐ AI chat / prompt history export committed to the repository
+Good luck. We look forward to reviewing your work.

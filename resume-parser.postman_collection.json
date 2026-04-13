@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "Resume Parser POC",
+    "_postman_id": "d4e8ab6f-a4a8-4fa8-8a17-0ee1f9ae5adf",
+    "description": "Collection for Resume Parser POC APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Ranking Run",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jdPath\": \"./inputs/job-description.docx\",\n  \"resumesDir\": \"./inputs/resumes/\",\n  \"concurrency\": 3\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/rankings",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "rankings"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Ranking Run",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/rankings/{{runId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "rankings", "{{runId}}"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "runId",
+      "value": ""
+    }
+  ]
+}
+
