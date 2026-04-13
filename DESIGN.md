@@ -107,7 +107,7 @@ flowchart TD
     C --> D[Set JobStore status: queued\nRespond 202 immediately]
     D --> E[Fire pipeline async\nno await]
 
-    E --> F[Parse JD file\nPdfParser | DocxParser]
+    E --> F[Parse JD file\nPdfParser or DocxParser]
     F --> G{Parse success?}
     G -- No --> JDFAIL([Hard stop: set status failed])
     G -- Yes --> H[Extract JD signals\ngpt-4o · temp 0 · strict JSON schema\nmaxAttempts 3 · retry on 429 / 5xx / timeout]
